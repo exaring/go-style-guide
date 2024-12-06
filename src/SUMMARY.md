@@ -51,6 +51,7 @@
   - [nil is a valid slice](slice-nil.md)
   - [Reduce Scope of Variables](var-scope.md)
   - [Avoid Naked Parameters](param-naked.md)
+  - [Avoid Naked Returns](naked-return.md)
   - [Use Raw String Literals to Avoid Escaping](string-escape.md)
   - Initializing Structs
     - [Use Field Names to Initialize Structs](struct-field-key.md)
