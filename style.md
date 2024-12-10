@@ -58,6 +58,7 @@
   - [nil is a valid slice](#nil-is-a-valid-slice)
   - [Reduce Scope of Variables](#reduce-scope-of-variables)
   - [Avoid Naked Parameters](#avoid-naked-parameters)
+  - [Avoid Naked Returns](#avoid-naked-returns)
   - [Use Raw String Literals to Avoid Escaping](#use-raw-string-literals-to-avoid-escaping)
   - [Initializing Structs](#initializing-structs)
     - [Use Field Names to Initialize Structs](#use-field-names-to-initialize-structs)
@@ -3331,6 +3332,36 @@ const (
 
 func printInfo(name string, region Region, status Status)
 ```
+
+### Avoid Naked Returns
+
+Naked returns hurt readability and make it harder for the IDE to help you (e.g. when highlighting variable usage).
+
+Always list the return values explicitly.
+
+<table>
+<thead><tr><th>Bad</th><th>Good</th></tr></thead>
+<tbody>
+<tr><td>
+
+```go
+func foo() (x int, err error) {
+  x = 42
+  return 
+}
+```
+
+</td><td>
+
+```go
+func foo() (x int, err error) {
+  x = 42
+  return x, err
+}
+```
+
+</td></tr>
+</tbody></table>
 
 ### Use Raw String Literals to Avoid Escaping
 
