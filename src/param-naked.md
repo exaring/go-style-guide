@@ -47,3 +47,5 @@ const (
 
 func printInfo(name string, region Region, status Status)
 ```
+
+<!-- agent: Comment non-obvious literal arguments at call sites (`printInfo("foo", true /* isLocal */)`), or better, replace bare `bool` parameters with dedicated types. -->

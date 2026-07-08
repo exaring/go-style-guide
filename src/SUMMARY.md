@@ -11,6 +11,7 @@
   - [Channel Size is One or None](channel-size.md)
   - [Start Enums at One](enum-start.md)
   - [Use `"time"` to handle time](time.md)
+  - [Pass `context.Context` explicitly](context.md)
   - Errors
     - [Error Types](error-type.md)
     - [Error Wrapping](error-wrap.md)
@@ -44,7 +45,6 @@
   - [Reduce Nesting](nest-less.md)
   - [Unnecessary Else](else-unnecessary.md)
   - [Top-level Variable Declarations](global-decl.md)
-  - [Prefix Unexported Globals with _](global-name.md)
   - [Embedding in Structs](struct-embed.md)
   - [Local Variable Declarations](var-decl.md)
   - [nil is a valid slice](slice-nil.md)
@@ -52,6 +52,7 @@
   - [Avoid Naked Parameters](param-naked.md)
   - [Avoid Naked Returns](naked-return.md)
   - [Use Raw String Literals to Avoid Escaping](string-escape.md)
+  - [Use `any` instead of `interface{}`](any.md)
   - Initializing Structs
     - [Use Field Names to Initialize Structs](struct-field-key.md)
     - [Omit Zero Value Fields in Structs](struct-field-zero.md)
@@ -63,4 +64,3 @@
 - Patterns
   - [Test Tables](test-table.md)
   - [Functional Options](functional-option.md)
-- [Linting](lint.md)

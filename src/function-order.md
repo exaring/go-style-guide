@@ -53,3 +53,5 @@ func calcCost(n []int) int {...}
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Order within a file: types, consts/vars, constructor (`NewX`), then methods grouped by receiver in rough call order; exported functions first, plain utility helpers at the end. -->

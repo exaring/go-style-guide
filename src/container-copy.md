@@ -31,8 +31,7 @@ trips[0] = ...
 
 ```go
 func (d *Driver) SetTrips(trips []Trip) {
-  d.trips = make([]Trip, len(trips))
-  copy(d.trips, trips)
+  d.trips = slices.Clone(trips)
 }
 
 trips := ...
@@ -89,11 +88,7 @@ func (s *Stats) Snapshot() map[string]int {
   s.mu.Lock()
   defer s.mu.Unlock()
 
-  result := make(map[string]int, len(s.counters))
-  for k, v := range s.counters {
-    result[k] = v
-  }
-  return result
+  return maps.Clone(s.counters)
 }
 
 // Snapshot is now a copy.
@@ -103,4 +98,11 @@ snapshot := stats.Snapshot()
 </td></tr>
 </tbody></table>
 
+Note that [`slices.Clone`] and [`maps.Clone`] create *shallow* copies: if the
+elements themselves contain pointers, slices, or maps, those still refer to
+shared data.
 
+  [`slices.Clone`]: https://pkg.go.dev/slices#Clone
+  [`maps.Clone`]: https://pkg.go.dev/maps#Clone
+
+<!-- agent: Copy slices and maps at API boundaries (`slices.Clone`, `maps.Clone`): copy what you receive before storing it, and copy internal state before returning it, so callers cannot mutate it. Both are shallow copies. -->

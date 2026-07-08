@@ -78,3 +78,5 @@ m := map[T1]T2{
 The basic rule of thumb is to use map literals when adding a fixed set of
 elements at initialization time, otherwise use `make` (and specify a size hint
 if available).
+
+<!-- agent: Initialize empty or programmatically-filled maps with `make(map[K]V, hint)`; use map literals only for a fixed set of elements. -->

@@ -3,7 +3,7 @@
 Methods with value receivers can be called on pointers as well as values.
 Methods with pointer receivers can only be called on pointers or [addressable values].
 
-  [addressable values]: https://golang.org/ref/spec#Method_values
+  [addressable values]: https://go.dev/ref/spec#Method_values
 
 For example,
 
@@ -75,4 +75,6 @@ i = s2Ptr
 
 Effective Go has a good write up on [Pointers vs. Values].
 
-  [Pointers vs. Values]: https://golang.org/doc/effective_go.html#pointers_vs_values
+  [Pointers vs. Values]: https://go.dev/doc/effective_go#pointers_vs_values
+
+<!-- agent: Pointer-receiver methods are only callable on addressable values, and a type with pointer-receiver methods satisfies interfaces only via its pointer. Value receivers work on both. -->

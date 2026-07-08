@@ -114,3 +114,5 @@ necessary might include:
   precomputation.
 
   [Google Cloud Functions]: https://cloud.google.com/functions/docs/bestpractices/tips#use_global_variables_to_reuse_objects_in_future_invocations
+
+<!-- agent: Avoid `init()`; initialize explicitly from `main()`. If unavoidable, `init()` must be deterministic and free of I/O, global state access, and side-effect ordering dependencies. -->

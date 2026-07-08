@@ -27,3 +27,5 @@ func foo() (x int, err error) {
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Never use naked returns; always list return values explicitly. -->

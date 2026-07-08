@@ -70,3 +70,5 @@ func (h LogHandler) ServeHTTP(
   // ...
 }
 ```
+
+<!-- agent: Verify interface compliance at compile time with `var _ http.Handler = (*Handler)(nil)` for types whose API contract requires implementing an interface. -->

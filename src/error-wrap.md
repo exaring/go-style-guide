@@ -74,6 +74,14 @@ x: y: new store: the error
 However once the error is sent to another system, it should be clear the
 message is an error (e.g. an `err` tag or "Failed" prefix in logs).
 
+To combine multiple errors—for example, when collecting failures from several
+independent operations—use [`errors.Join`]. Errors joined this way can still
+be matched individually with `errors.Is` and `errors.As`.
+
+  [`errors.Join`]: https://pkg.go.dev/errors#Join
+
 See also [Don't just check errors, handle them gracefully].
 
   [Don't just check errors, handle them gracefully]: https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully
+
+<!-- agent: When propagating errors, add succinct context with `fmt.Errorf("open config: %w", err)`; avoid "failed to" prefixes. Use `%v` instead of `%w` only to deliberately hide the cause. Combine independent failures with `errors.Join`. -->

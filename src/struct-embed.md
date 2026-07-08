@@ -157,3 +157,5 @@ type Client struct {
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Place embedded types at the top of the field list, separated by a blank line. Embed only when it adds real functionality without harming the zero value, copy semantics, or API surface; never embed mutexes. -->

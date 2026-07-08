@@ -54,3 +54,5 @@ const (
 ```
 
 <!-- TODO: section on String methods for enums -->
+
+<!-- agent: Start iota-based enums at one (`iota + 1`) unless the zero value is a deliberate, meaningful default. -->

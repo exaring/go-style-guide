@@ -45,3 +45,5 @@ Changes to the structure of the serialized form--including field names--break
 this contract. Specifying field names inside tags makes the contract explicit,
 and it guards against accidentally breaking the contract by refactoring or
 renaming fields.
+
+<!-- agent: Every struct field marshaled to JSON, YAML, etc. gets an explicit field tag; the serialized form is a contract that must survive field renames. -->

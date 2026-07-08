@@ -7,7 +7,7 @@ If a system under test needs to be tested against _multiple conditions_ where
 certain parts of the the inputs and outputs change, a table-driven test should
 be used to reduce redundancy and improve readability.
 
-  [subtests]: https://blog.golang.org/subtests
+  [subtests]: https://go.dev/blog/subtests
 
 <table>
 <thead><tr><th>Bad</th><th>Good</th></tr></thead>
@@ -238,10 +238,9 @@ for multiple inputs/outputs to a system.
 
 ## Parallel Tests
 
-Parallel tests, like some specialized loops (for example, those that spawn
-goroutines or capture references as part of the loop body),
-must take care to explicitly assign loop variables within the loop's scope to
-ensure that they hold the expected values.
+Since Go 1.22, loop variables are scoped to each iteration, so subtests that
+call `t.Parallel()` can capture `tt` directly. Copies like `tt := tt` are no
+longer needed; remove them when you encounter them.
 
 ```go
 tests := []struct{
@@ -252,7 +251,6 @@ tests := []struct{
 }
 
 for _, tt := range tests {
-  tt := tt // for t.Parallel
   t.Run(tt.give, func(t *testing.T) {
     t.Parallel()
     // ...
@@ -260,9 +258,6 @@ for _, tt := range tests {
 }
 ```
 
-In the example above, we must declare a `tt` variable scoped to the loop
-iteration because of the use of `t.Parallel()` below.
-If we do not do that, most or all tests will receive an unexpected value for
-`tt`, or a value that changes as they're running.
-
 <!-- TODO: Explain how to use _test packages. -->
+
+<!-- agent: Use table-driven tests with `t.Run` subtests for repetitive logic; name the slice `tests`, each case `tt`, and prefix inputs/outputs with `give`/`want`. If cases need branching logic, mocks, or conditional assertions, write separate test functions instead. Since Go 1.22, no `tt := tt` copy is needed for `t.Parallel()`. -->

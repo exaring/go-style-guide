@@ -5,4 +5,6 @@ names]. An exception is made for test functions, which may contain underscores
 for the purpose of grouping related test cases, e.g.,
 `TestMyFunction_WhatIsBeingTested`.
 
-  [MixedCaps for function names]: https://golang.org/doc/effective_go.html#mixed-caps
+  [MixedCaps for function names]: https://go.dev/doc/effective_go#mixed-caps
+
+<!-- agent: Use MixedCaps for function names; underscores only in test names for grouping (`TestFoo_EdgeCase`). -->

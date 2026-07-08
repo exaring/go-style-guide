@@ -93,3 +93,5 @@
 Remember that, while it is a valid slice, a nil slice is not equivalent to an
 allocated slice of length 0 - one is nil and the other is not - and the two may
 be treated differently in different situations (such as serialization).
+
+<!-- agent: Return `nil` rather than `[]T{}`; check emptiness with `len(s) == 0`, never `s == nil`; a `var`-declared nil slice is immediately usable with `append`. -->

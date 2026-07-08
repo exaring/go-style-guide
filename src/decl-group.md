@@ -176,3 +176,5 @@ func (c *client) request() {
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Group related `const`/`var`/`type` declarations into blocks; keep unrelated declarations in separate blocks. Adjacent local variables declared together go in one `var (...)` block. -->

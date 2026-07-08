@@ -9,17 +9,20 @@ There are two popular ways to do this:
 
     ```go
     var wg sync.WaitGroup
-    for i := 0; i < N; i++ {
-      wg.Add(1)
-      go func() {
-        defer wg.Done()
+    for range N {
+      wg.Go(func() {
         // ...
-      }()
+      })
     }
 
     // To wait for all to finish:
     wg.Wait()
     ```
+
+  ([`WaitGroup.Go`] requires Go 1.25; on older versions, call `wg.Add(1)`
+  before spawning the goroutine and `defer wg.Done()` inside it.)
+
+    [`WaitGroup.Go`]: https://pkg.go.dev/sync#WaitGroup.Go
 
 - Add another `chan struct{}` that the goroutine closes when it's done.
   Do this if there's only one goroutine.
@@ -34,3 +37,5 @@ There are two popular ways to do this:
     // To wait for the goroutine to finish:
     <-done
     ```
+
+<!-- agent: Wait for goroutines to exit: `sync.WaitGroup` (use `wg.Go` on Go 1.25+) for several goroutines, or a `done` channel the goroutine closes for a single one. -->
