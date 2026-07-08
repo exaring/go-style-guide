@@ -11,5 +11,7 @@ When naming packages, choose a name that is:
 
 See also [Package Names] and [Style guideline for Go packages].
 
-  [Package Names]: https://blog.golang.org/package-names
+  [Package Names]: https://go.dev/blog/package-names
   [Style guideline for Go packages]: https://rakyll.org/style-packages/
+
+<!-- agent: Package names are short, all-lowercase, singular, without underscores, and informative; never `util`, `common`, `shared`, or `lib`. -->

@@ -89,3 +89,5 @@ callers.
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Declare mutexes as `var mu sync.Mutex` (the zero value is valid), never `new(sync.Mutex)`. Never embed a mutex in a struct; use an unexported named field like `mu sync.Mutex`. -->

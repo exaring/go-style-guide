@@ -3,7 +3,7 @@
 You should almost always specify field names when initializing structs. This is
 now enforced by [`go vet`].
 
-  [`go vet`]: https://golang.org/cmd/vet/
+  [`go vet`]: https://pkg.go.dev/cmd/vet
 
 <table>
 <thead><tr><th>Bad</th><th>Good</th></tr></thead>
@@ -39,3 +39,5 @@ tests := []struct{
   {Subtract, "subtract"},
 }
 ```
+
+<!-- agent: Always use field names when initializing structs (vet-enforced); the only exception is test-table literals with three or fewer fields. -->

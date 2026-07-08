@@ -3,7 +3,7 @@
 The single return value form of a [type assertion] will panic on an incorrect
 type. Therefore, always use the "comma ok" idiom.
 
-  [type assertion]: https://golang.org/ref/spec#Type_assertions
+  [type assertion]: https://go.dev/ref/spec#Type_assertions
 
 <table>
 <thead><tr><th>Bad</th><th>Good</th></tr></thead>
@@ -28,3 +28,5 @@ if !ok {
 
 <!-- TODO: There are a few situations where the single assignment form is
 fine. -->
+
+<!-- agent: Always use the comma-ok form of type assertions (`t, ok := i.(string)`); the single-value form panics on mismatch. -->

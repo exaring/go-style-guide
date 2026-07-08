@@ -8,8 +8,8 @@ the original within the current lexical scope (and any nested scopes) or make
 affected code confusing. In the best case, the compiler will complain; in the
 worst case, such code may introduce latent, hard-to-grep bugs.
 
-  [language specification]: https://golang.org/ref/spec
-  [predeclared identifiers]: https://golang.org/ref/spec#Predeclared_identifiers
+  [language specification]: https://go.dev/ref/spec
+  [predeclared identifiers]: https://go.dev/ref/spec#Predeclared_identifiers
 
 <table>
 <thead><tr><th>Bad</th><th>Good</th></tr></thead>
@@ -91,3 +91,5 @@ func (f Foo) String() string {
 Note that the compiler will not generate errors when using predeclared
 identifiers, but tools such as `go vet` should correctly point out these and
 other cases of shadowing.
+
+<!-- agent: Never use predeclared identifiers (`error`, `string`, `len`, `min`, `max`, ...) as names for variables, fields, or parameters. -->

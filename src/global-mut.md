@@ -74,3 +74,5 @@ func TestSigner(t *testing.T) {
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Avoid mutable global variables; inject dependencies instead (e.g. a `now func() time.Time` field rather than swapping a package-level `timeNow`). -->

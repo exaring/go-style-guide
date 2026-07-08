@@ -115,3 +115,5 @@ Among other things, you may:
 
 This guidance only requires that there's a single place in your `main()`
 responsible for actually exiting the process.
+
+<!-- agent: Exit at most once per `main()`: put the logic in `func run() error` and have `main` do `if err := run(); err != nil { log.Fatal(err) }`. -->

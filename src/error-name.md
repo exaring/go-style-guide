@@ -2,7 +2,6 @@
 
 For error values stored as global variables,
 use the prefix `Err` or `err` depending on whether they're exported.
-This guidance supersedes the [Prefix Unexported Globals with _](global-name.md).
 
 ```go
 var (
@@ -50,3 +49,5 @@ func (e *resolveError) Error() string {
   return fmt.Sprintf("resolve %q", e.Path)
 }
 ```
+
+<!-- agent: Name error variables `ErrFoo`/`errFoo` and error types `FooError`. -->

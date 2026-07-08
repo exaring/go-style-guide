@@ -38,3 +38,5 @@ BenchmarkGood-4  500000000   3.25 ns/op
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Do not convert the same fixed string to `[]byte` repeatedly in a loop; convert once and reuse. -->

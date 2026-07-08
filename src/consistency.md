@@ -17,3 +17,5 @@ and bugs.
 When applying these guidelines to a codebase, it is recommended that changes
 are made at a package (or larger) level: application at a sub-package level
 violates the above concern by introducing multiple styles into the same code.
+
+<!-- agent: Above all, be consistent: match the conventions of the surrounding code and apply style changes at package level or wider, never file-by-file. -->

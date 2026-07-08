@@ -43,3 +43,5 @@ for _, v := range data {
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Reduce nesting: handle errors and special cases first, then return early or `continue`, keeping the happy path unindented. -->

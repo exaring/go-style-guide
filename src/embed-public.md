@@ -62,7 +62,7 @@ The outer type gets implicit copies of the embedded type's methods.
 These methods, by default, delegate to the same method of the embedded
 instance.
 
-  [type embedding]: https://golang.org/doc/effective_go.html#embedding
+  [type embedding]: https://go.dev/doc/effective_go#embedding
 
 The struct also gains a field by the same name as the type.
 So, if the embedded type is public, the field is public.
@@ -130,3 +130,5 @@ Although writing these delegate methods is tedious, the additional effort hides
 an implementation detail, leaves more opportunities for change, and also
 eliminates indirection for discovering the full List interface in
 documentation.
+
+<!-- agent: Do not embed types (structs or interfaces) in public structs: it leaks implementation details and freezes the API. Write explicit delegating methods instead. -->

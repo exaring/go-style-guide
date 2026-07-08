@@ -109,3 +109,5 @@ if err != nil {
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Handle each error exactly once: either wrap and return it, or log it and degrade gracefully. Never log an error and also return it. -->

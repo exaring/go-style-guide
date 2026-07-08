@@ -28,3 +28,5 @@ if b {
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Avoid `else` when both branches only assign a variable: assign the default first, then override in an `if`. -->

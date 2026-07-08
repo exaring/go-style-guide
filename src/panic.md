@@ -85,3 +85,5 @@ if err != nil {
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Never panic in production code paths; return errors and let callers decide. Panics are acceptable only for unrecoverable situations and program-startup failures (e.g. `template.Must`). In tests, use `t.Fatal`, not panic. -->

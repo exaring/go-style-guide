@@ -37,3 +37,5 @@ BenchmarkStrconv-4    64.2 ns/op    1 allocs/op
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: In hot paths, use `strconv` instead of `fmt` to convert primitives to/from strings. -->

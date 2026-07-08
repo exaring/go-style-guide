@@ -66,3 +66,5 @@ return nil
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Reduce variable scope where it does not add nesting, e.g. `if err := os.WriteFile(...); err != nil { return err }` when `err` is not needed afterwards. -->

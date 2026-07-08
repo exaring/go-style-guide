@@ -26,3 +26,5 @@ sptr := &T{Name: "bar"}
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Initialize struct pointers with `&T{...}`, not `new(T)`. -->

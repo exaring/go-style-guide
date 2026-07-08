@@ -47,3 +47,5 @@ prove that your function execution time is in the order of nanoseconds. The
 readability win of using defers is worth the miniscule cost of using them. This
 is especially true for larger methods that have more than simple memory
 accesses, where the other computations are more significant than the `defer`.
+
+<!-- agent: Use `defer` to release resources such as files and locks; its overhead is negligible. -->

@@ -10,8 +10,10 @@ like preventing unused objects from being garbage collected
 and holding onto resources that are otherwise no longer used.
 
 Therefore, do not leak goroutines in production code.
-Use [go.uber.org/goleak](https://pkg.go.dev/go.uber.org/goleak)
-to test for goroutine leaks inside packages that may spawn goroutines.
+Test concurrent code with [`testing/synctest`](https://pkg.go.dev/testing/synctest)
+(stable since Go 1.25): `synctest.Test` runs the test in a "bubble" with a fake
+clock and fails if any goroutine started inside it is still running when the
+test function returns, so leaked goroutines are caught automatically.
 
 In general, every goroutine:
 
@@ -77,3 +79,5 @@ and we can wait for it to exit with `<-done`.
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Never fire-and-forget goroutines: every goroutine must have a stop signal (or predictable end) and a way to wait for its exit. Test concurrent code with `testing/synctest` (Go 1.25+), which fails on goroutines leaked from its bubble. -->

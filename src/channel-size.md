@@ -27,3 +27,5 @@ c := make(chan int)
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Make channels unbuffered or with a buffer of 1. Any larger size needs strong justification for how the size was chosen and what happens when the buffer fills. -->

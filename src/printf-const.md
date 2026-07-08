@@ -24,3 +24,5 @@ fmt.Printf(msg, 1, 2)
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Declare format strings used outside a direct Printf call as `const` so `go vet` can check them. -->

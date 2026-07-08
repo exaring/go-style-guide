@@ -155,3 +155,5 @@ See also,
 
 <!-- TODO: replace this with parameter structs and functional options, when to
 use one vs other -->
+
+<!-- agent: For optional constructor/API arguments, use functional options: an `Option` interface with an unexported method applying to an unexported `options` struct, passed as `opts ...Option`. -->

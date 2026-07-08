@@ -12,3 +12,5 @@ An interface is two fields:
 
 If you want interface methods to modify the underlying data, you must use a
 pointer.
+
+<!-- agent: Pass interfaces as values, never as pointers to interfaces (`*io.Reader`); the underlying data can itself be a pointer. -->

@@ -75,3 +75,5 @@ See [Wait for goroutines to exit](goroutine-exit.md).
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Never spawn goroutines from `init()`. Packages needing background work expose a worker object with a `Close`/`Stop`/`Shutdown` method that stops the goroutine and waits for it. -->

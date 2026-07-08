@@ -44,3 +44,5 @@ import (
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Alias an import only when the package name does not match the last path element (e.g. `trace "example.com/trace/v2"`) or to resolve a conflict. -->

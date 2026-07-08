@@ -1,6 +1,6 @@
 # Use Raw String Literals to Avoid Escaping
 
-Go supports [raw string literals](https://golang.org/ref/spec#raw_string_lit),
+Go supports [raw string literals](https://go.dev/ref/spec#raw_string_lit),
 which can span multiple lines and include quotes. Use these to avoid
 hand-escaped strings which are much harder to read.
 
@@ -21,3 +21,5 @@ wantError := `unknown error:"test"`
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Use raw string literals (backquotes) instead of escaping quotes by hand. -->

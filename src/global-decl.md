@@ -40,3 +40,5 @@ func F() myError { return myError{} }
 var _e error = F()
 // F returns an object of type myError but we want error.
 ```
+
+<!-- agent: For top-level `var`s, omit the type when it equals the expression type (`var _s = F()`); specify it only when they differ (`var _e error = F()`). -->

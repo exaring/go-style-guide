@@ -41,8 +41,15 @@ jobs:
         preface: src/preface.txt
         output: style.md
 
+    - name: Check or update style-for-agents.md
+      run: |
+        ./tools/gen-style-for-agents.sh
+        if [[ "${{ github.event_name }}" != "pull_request_target" ]]; then
+          git diff --exit-code style-for-agents.md
+        fi
+
     - uses: stefanzweifel/git-auto-commit-action@v5
       if: ${{ github.event_name == 'pull_request_target' }}
       with:
-        file_pattern: style.md
-        commit_message: 'Auto-update style.md'
+        file_pattern: style.md style-for-agents.md
+        commit_message: 'Auto-update style.md and style-for-agents.md'

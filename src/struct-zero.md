@@ -26,4 +26,6 @@ similar to the distinction created for [map initialization], and matches how
 we prefer to [declare empty slices].
 
   [map initialization]: #initializing-maps
-  [declare empty slices]: https://github.com/golang/go/wiki/CodeReviewComments#declaring-empty-slices
+  [declare empty slices]: https://go.dev/wiki/CodeReviewComments#declaring-empty-slices
+
+<!-- agent: Declare all-zero structs as `var user User`, not `user := User{}`. -->

@@ -46,3 +46,5 @@ tests := []struct{
   // ...
 }
 ```
+
+<!-- agent: Omit zero-value fields from struct literals unless the name adds meaning (as in test tables). -->

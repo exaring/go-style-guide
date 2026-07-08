@@ -117,3 +117,5 @@ BenchmarkGood-4   100000000    0.21s
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Pass a capacity hint to `make()` for maps (`make(map[K]V, n)`) and slices (`make([]T, 0, n)`) when the size is known, especially before append loops. -->

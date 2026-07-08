@@ -3,8 +3,8 @@
 Go programs use [`os.Exit`] or [`log.Fatal*`] to exit immediately. (Panicking
 is not a good way to exit programs, please [don't panic](panic.md).)
 
-  [`os.Exit`]: https://golang.org/pkg/os/#Exit
-  [`log.Fatal*`]: https://golang.org/pkg/log/#Fatal
+  [`os.Exit`]: https://pkg.go.dev/os#Exit
+  [`log.Fatal*`]: https://pkg.go.dev/log#Fatal
 
 Call one of `os.Exit` or `log.Fatal*` **only in `main()`**. All other
 functions should return errors to signal failure.
@@ -74,3 +74,5 @@ Rationale: Programs with multiple functions that exit present a few issues:
 - Skipped cleanup: When a function exits the program, it skips function calls
   enqueued with `defer` statements. This adds risk of skipping important
   cleanup tasks.
+
+<!-- agent: Call `os.Exit` or `log.Fatal` only inside `main()`; every other function returns errors. -->

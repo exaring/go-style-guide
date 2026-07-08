@@ -24,7 +24,7 @@ s := "foo"
 However, there are cases where the default value is clearer when the `var`
 keyword is used. [Declaring Empty Slices], for example.
 
-  [Declaring Empty Slices]: https://github.com/golang/go/wiki/CodeReviewComments#declaring-empty-slices
+  [Declaring Empty Slices]: https://go.dev/wiki/CodeReviewComments#declaring-empty-slices
 
 <table>
 <thead><tr><th>Bad</th><th>Good</th></tr></thead>
@@ -57,3 +57,5 @@ func f(list []int) {
 
 </td></tr>
 </tbody></table>
+
+<!-- agent: Use `:=` when setting an explicit value; use `var` when the zero value is intended (e.g. `var filtered []int` before an append loop). -->
