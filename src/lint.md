@@ -31,5 +31,5 @@ recommended as a base set, and we encourage teams to add any additional linters
 that make sense for their projects.
 
   [golangci-lint]: https://github.com/golangci/golangci-lint
-  [.golangci.yml]: https://github.com/uber-go/guide/blob/master/.golangci.yml
+  [.golangci.yml]: https://github.com/exaring/guide/blob/master/.golangci.yml
   [various linters]: https://golangci-lint.run/usage/linters/

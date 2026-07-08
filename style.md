@@ -5,7 +5,7 @@
 
 <!-- markdownlint-disable MD033 -->
 
-# Uber Go Style Guide
+# Exaring Go Style Guide
 
 - [Introduction](#introduction)
 - [Guidelines](#guidelines)
@@ -25,7 +25,6 @@
     - [Handle Errors Once](#handle-errors-once)
   - [Handle Type Assertion Failures](#handle-type-assertion-failures)
   - [Don't Panic](#dont-panic)
-  - [Use go.uber.org/atomic](#use-gouberorgatomic)
   - [Avoid Mutable Globals](#avoid-mutable-globals)
   - [Avoid Embedding Types in Public Structs](#avoid-embedding-types-in-public-structs)
   - [Avoid Using Built-In Names](#avoid-using-built-in-names)
@@ -1239,61 +1238,6 @@ if err != nil {
 f, err := os.CreateTemp("", "test")
 if err != nil {
   t.Fatal("failed to set up test")
-}
-```
-
-</td></tr>
-</tbody></table>
-
-### Use go.uber.org/atomic
-
-Atomic operations with the [sync/atomic](https://golang.org/pkg/sync/atomic/) package operate on the raw types
-(`int32`, `int64`, etc.) so it is easy to forget to use the atomic operation to
-read or modify the variables.
-
-[go.uber.org/atomic](https://godoc.org/go.uber.org/atomic) adds type safety to these operations by hiding the
-underlying type. Additionally, it includes a convenient `atomic.Bool` type.
-
-<table>
-<thead><tr><th>Bad</th><th>Good</th></tr></thead>
-<tbody>
-<tr><td>
-
-```go
-type foo struct {
-  running int32  // atomic
-}
-
-func (f* foo) start() {
-  if atomic.SwapInt32(&f.running, 1) == 1 {
-     // already running…
-     return
-  }
-  // start the Foo
-}
-
-func (f *foo) isRunning() bool {
-  return f.running == 1  // race!
-}
-```
-
-</td><td>
-
-```go
-type foo struct {
-  running atomic.Bool
-}
-
-func (f *foo) start() {
-  if f.running.Swap(true) {
-     // already running…
-     return
-  }
-  // start the Foo
-}
-
-func (f *foo) isRunning() bool {
-  return f.running.Load()
 }
 ```
 
@@ -4104,7 +4048,7 @@ quality without being unnecessarily prescriptive:
 
 We recommend [golangci-lint](https://github.com/golangci/golangci-lint) as the go-to lint runner for Go code, largely due
 to its performance in larger codebases and ability to configure and use many
-canonical linters at once. This repo has an example [.golangci.yml](https://github.com/uber-go/guide/blob/master/.golangci.yml) config file
+canonical linters at once. This repo has an example [.golangci.yml](https://github.com/exaring/guide/blob/master/.golangci.yml) config file
 with recommended linters and settings.
 
 golangci-lint has [various linters](https://golangci-lint.run/usage/linters/) available for use. The above linters are
